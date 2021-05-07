@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+// We need to import products from the /products folder in order to display the details.
 import { products } from '../products';
 
 @Component({
@@ -9,6 +10,8 @@ import { products } from '../products';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
+  // We need to declare the product property in the class so we can have access to the items of the the products div from the
+  // product-details.component.html
   product;
   /* . . . */
   constructor(

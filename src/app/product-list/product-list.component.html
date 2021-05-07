@@ -1,13 +1,24 @@
 <h2>Products</h2>
 
+<!--
+  *ngFor is and angular command that says "For Each".  So, "For Each product of products" display the things in the div tag.
+-->
 <div *ngFor="let product of products">
 
   <h3>
-    <a [title]="product.name + ' details'" [routerLink]="['/products', product.id]">
+    <!--
+      [routerLink] makes the url of the product have the path of /products and then its product id.
+    -->
+    <a [title]="product.name + ' details'" 
+       [routerLink]="['/products', product.id]"
+    >
       {{product.name}}
       </a>
     </h3>
 
+    <!--
+      This next part says "If the product has a product description, interpolate, or display, its description."
+    -->
   <p *ngIf="product.description">
     Description: {{product.description}}
     </p>
@@ -16,6 +27,12 @@
   <button (click)="share()">
     Share
     </button>
+
+    <!--
+      <app-product-alerts> is found on the product-alerts.component.ts.
+      <app-product-alerts> is defined under "selector" and can be named literally anything to reference that specific TypeScript page.
+      [product]="product" and (notify)="onNotify()" are being "bound" to the objects or methods found in the class.
+    -->
 
   <app-product-alerts
     [product]="product"

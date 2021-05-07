@@ -15,6 +15,11 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
+      /*
+        This next line codes the URL path for the products.
+        '/products is the path starting from the root folder.
+        /:productId dereferences the product id?
+      */
       { path: 'products/:productId', component: ProductDetailsComponent },
     ])
   ],
