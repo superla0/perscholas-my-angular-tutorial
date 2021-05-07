@@ -16,6 +16,7 @@ export class ProductDetailsComponent implements OnInit {
   product;
   /* . . . */
   constructor(
+    // This is TypeScript syntax.
     private route: ActivatedRoute,
     private cartService: CartService
   ) { }
